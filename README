@@ -1,0 +1,52 @@
+# Hangman Game in Python
+
+This project is a Python implementation of the classic Hangman game. The game allows players to guess letters to uncover a hidden word, with a limited number of incorrect guesses allowed before the game is lost.
+
+## Features
+
+- **Random Word Selection**: The game selects a random word from a predefined list.
+- **Text-Based Interface**: Simple text-based interface for easy interaction.
+- **Feedback**: Visual feedback on guessed letters, wrong guesses, and remaining attempts.
+- **Hint System**: Players can request hints to aid in guessing the word.
+- **Score Tracking**: Tracks the player's score and the number of games played.
+
+## Files
+
+- `hangman.py`: The main game logic, handling player input, game state updates, and score tracking.
+- `hangman_helper.py`: Helper functions for word selection, input handling, and game display.
+
+## How to Run
+
+1. Ensure you have Python installed on your system.
+2. Download both `hangman.py` and `hangman_helper.py` files.
+3. Run the game using the following command:
+   ```bash
+   python hangman.py
+   ```
+
+## Functions Overview
+
+### hangman.py
+
+- **main()**: Starts the game, loads the word list, and manages the game loop.
+- **run_single_game(words_list, score)**: Runs a single instance of the game.
+- **update_word_pattern(word, pattern, letter)**: Updates the word pattern based on the guessed letter.
+- **letter(value, wrong_lst, pattern_of_word, the_chosen_word, score)**: Handles letter guesses and updates the game state.
+- **word(value, the_chosen_word, pattern_of_word, score)**: Handles word guesses and updates the game state.
+- **filter_words_list(words, pattern, wrong_guess_lst)**: Filters the word list based on the current pattern and wrong guesses.
+- **shorter_lst(filter_word_lst, len_lst)**: Shortens the list of potential words for hints.
+- **hint(score, words_list, pattern_of_word, wrong_lst, the_chosen_word)**: Provides hints to the player.
+
+### hangman_helper.py
+
+- **set_seed(a=None)**: Sets a seed for the random generator.
+- **load_words(file='words.txt')**: Loads the list of words.
+- **get_random_word(words_list)**: Selects a random word from the list.
+- **get_input()**: Gets input from the player.
+- **display_state(pattern, wrong_guess_lst, points, msg)**: Displays the current state of the game.
+- **show_suggestions(matches)**: Shows suggestions for possible words.
+- **play_again(msg)**: Asks the player if they want to play again.
+
+## Example Usage
+
+Upon running `hangman.py`, the game will start and prompt you to guess letters or words. Use the hints if you get stuck and try to guess the word before running out of attempts!
